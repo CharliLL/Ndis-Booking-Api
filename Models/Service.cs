@@ -7,7 +7,7 @@
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int Duration { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public List<Booking> Bookings { get; set; }
         public List<ProviderService> ProviderServices { get; set; }
     }

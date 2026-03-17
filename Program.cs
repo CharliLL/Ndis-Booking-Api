@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NDISBookingApi.Data;
 using NDISBookingApi.Middlewares;
+using NDISBookingApi.Repositories.BookingREpository;
 using NDISBookingApi.Repositories.ServiceM;
+using NDISBookingApi.Services.BookingService;
 using NDISBookingApi.Services.ServiceM;
 
 
@@ -34,6 +36,9 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddScoped<IServiceMRepository, ServiceMRepository>();
 builder.Services.AddScoped<IServiceMService, ServiceMService>();
+
+builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IBookingService, BookingService>();
 
 //Add logging configuration
 builder.Logging.ClearProviders();
