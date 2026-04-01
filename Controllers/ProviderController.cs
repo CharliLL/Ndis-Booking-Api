@@ -49,7 +49,7 @@ namespace NDISBookingApi.Controllers
         }
 
         /// <summary>
-        /// Create a new provider.
+        /// Create a new providerx.
         /// </summary>
         /// <param name="createProviderRequestDto">The provider data to create.</param>
         /// <returns>The newly created provider.</returns>
