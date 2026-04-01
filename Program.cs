@@ -4,8 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using NDISBookingApi.Data;
 using NDISBookingApi.Middlewares;
 using NDISBookingApi.Repositories.BookingREpository;
+using NDISBookingApi.Repositories.ProviderRepository;
 using NDISBookingApi.Repositories.ServiceM;
 using NDISBookingApi.Services.BookingService;
+using NDISBookingApi.Services.ProviderService;
 using NDISBookingApi.Services.ServiceM;
 
 
@@ -39,6 +41,9 @@ builder.Services.AddScoped<IServiceMService, ServiceMService>();
 
 builder.Services.AddScoped<IBookingRepository, BookingRepository>();
 builder.Services.AddScoped<IBookingService, BookingService>();
+
+builder.Services.AddScoped<IProviderRepository, ProviderRepository>();
+builder.Services.AddScoped<IProviderService, ProviderService>();
 
 //Add logging configuration
 builder.Logging.ClearProviders();

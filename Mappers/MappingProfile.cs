@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using NDISBookingApi.DTOs.Booking;
+using NDISBookingApi.DTOs.Provider;
 using NDISBookingApi.DTOs.Service;
 using NDISBookingApi.Models;
 
@@ -19,6 +20,11 @@ namespace NDISBookingApi.Mappers
                 .ForMember(d => d.ServiceName, o => o.MapFrom(s => s.Service.Name));
             CreateMap<CreateBookingRequestDto, Booking>();
             CreateMap<UpdateBookingRequestDto, Booking>();
+
+            CreateMap<Provider, ProviderResponseDto>()
+                .ForMember(d=>d.UserName, o=>o.MapFrom(s=>s.User.Name));
+            CreateMap<CreateProviderRequestDto, Provider>();
+            CreateMap<UpdateProviderRequestDto, Provider>();
         }
     }
 }
